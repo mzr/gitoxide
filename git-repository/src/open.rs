@@ -73,6 +73,7 @@ impl crate::ThreadSafeRepository {
                 worktree_dir = Some(git_dir.parent().expect("parent is always available").to_owned());
             }
         }
+        // TODO: make core.precomposeUnicode available as well.
         let use_multi_pack_index = config_bool(&config, "core.multiPackIndex", true);
         let repo_format_version = config
             .value::<Integer>("core", None, "repositoryFormatVersion")
